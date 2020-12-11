@@ -6,4 +6,9 @@ la app ya esta lista para ser usada pero tambien tiene muchos bugs que en las pr
 
 Login de la app
 
-https://github.com/salvamn/To-Do-List-con-Java/blob/main/loginV1.PNG
+![loginV1](https://user-images.githubusercontent.com/61121429/101943069-42327380-3bc9-11eb-8313-eebd2529338f.PNG)
+
+
+Ventana Principal 
+
+![ventanaPrincipalV1](https://user-images.githubusercontent.com/61121429/101943121-55ddda00-3bc9-11eb-9272-14ca0a5d58d1.PNG)
