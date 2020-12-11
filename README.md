@@ -12,3 +12,8 @@ Login de la app
 Ventana Principal 
 
 ![ventanaPrincipalV1](https://user-images.githubusercontent.com/61121429/101943121-55ddda00-3bc9-11eb-9272-14ca0a5d58d1.PNG)
+
+
+Video de la app
+
+[https://youtu.be/1hE1tzKd408](url)
