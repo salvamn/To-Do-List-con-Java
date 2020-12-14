@@ -21,7 +21,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     int x,y;
     public VentanaPrincipal() {
         initComponents();
-        ConsultasDB.traerTitulo(listaDeTareasJlist);
+        ConsultasDB.traerTitulo(listaDeTareasJlist, listaDisponibles);
         
         
 
@@ -58,12 +58,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         refrescarBoton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         salirBoton = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        listaDisponibles = new javax.swing.JList<>();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(42, 42, 46));
 
         agregarTareaLabel.setFont(new java.awt.Font("Dubai Medium", 1, 18)); // NOI18N
         agregarTareaLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -98,11 +101,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         seleccionTareaLabel.setFont(new java.awt.Font("Dubai Medium", 1, 18)); // NOI18N
         seleccionTareaLabel.setForeground(new java.awt.Color(255, 255, 255));
         seleccionTareaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        seleccionTareaLabel.setText("Selecciona una tarea");
+        seleccionTareaLabel.setText("Disponibles");
 
-        botonMostrarTarea.setBackground(new java.awt.Color(51, 51, 51));
-        botonMostrarTarea.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
-        botonMostrarTarea.setForeground(new java.awt.Color(255, 255, 255));
+        botonMostrarTarea.setBackground(new java.awt.Color(93, 157, 255));
+        botonMostrarTarea.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
+        botonMostrarTarea.setForeground(new java.awt.Color(236, 255, 253));
         botonMostrarTarea.setText("Mostar Tarea");
         botonMostrarTarea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,19 +113,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        botonActualizarTarea.setBackground(new java.awt.Color(51, 51, 51));
-        botonActualizarTarea.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
-        botonActualizarTarea.setForeground(new java.awt.Color(255, 255, 255));
-        botonActualizarTarea.setText("Actualizar Tarea");
+        botonActualizarTarea.setBackground(new java.awt.Color(93, 157, 255));
+        botonActualizarTarea.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
+        botonActualizarTarea.setForeground(new java.awt.Color(236, 255, 253));
+        botonActualizarTarea.setText("Completar Tarea");
         botonActualizarTarea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonActualizarTareaActionPerformed(evt);
             }
         });
 
-        botonEliminarTarea.setBackground(new java.awt.Color(51, 51, 51));
-        botonEliminarTarea.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
-        botonEliminarTarea.setForeground(new java.awt.Color(255, 255, 255));
+        botonEliminarTarea.setBackground(new java.awt.Color(93, 157, 255));
+        botonEliminarTarea.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
+        botonEliminarTarea.setForeground(new java.awt.Color(236, 255, 253));
         botonEliminarTarea.setText("Eliminar Tarea");
         botonEliminarTarea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,21 +133,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        cajaMostrarTareas.setEditable(false);
         cajaMostrarTareas.setBackground(new java.awt.Color(51, 51, 51));
         cajaMostrarTareas.setColumns(20);
-        cajaMostrarTareas.setFont(new java.awt.Font("Dubai Medium", 1, 18)); // NOI18N
+        cajaMostrarTareas.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
         cajaMostrarTareas.setForeground(new java.awt.Color(255, 255, 255));
         cajaMostrarTareas.setLineWrap(true);
         cajaMostrarTareas.setRows(5);
+        cajaMostrarTareas.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane3.setViewportView(cajaMostrarTareas);
 
         jLabel3.setFont(new java.awt.Font("Dubai Medium", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Comentarios de Tareas");
 
-        botonAgregarTarea.setBackground(new java.awt.Color(51, 51, 51));
-        botonAgregarTarea.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
-        botonAgregarTarea.setForeground(new java.awt.Color(255, 255, 255));
+        botonAgregarTarea.setBackground(new java.awt.Color(93, 157, 255));
+        botonAgregarTarea.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
+        botonAgregarTarea.setForeground(new java.awt.Color(236, 255, 253));
         botonAgregarTarea.setText("Agregar Tarea");
         botonAgregarTarea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +157,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        chekEstadoDeTarea.setBackground(new java.awt.Color(0, 0, 0));
+        chekEstadoDeTarea.setBackground(new java.awt.Color(42, 42, 46));
         chekEstadoDeTarea.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
         chekEstadoDeTarea.setForeground(new java.awt.Color(255, 255, 255));
         chekEstadoDeTarea.setText("Completado");
@@ -166,9 +171,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         cajaTextoActualizar.setFont(new java.awt.Font("Dubai Medium", 1, 12)); // NOI18N
         cajaTextoActualizar.setForeground(new java.awt.Color(255, 255, 255));
 
-        refrescarBoton.setBackground(new java.awt.Color(51, 51, 51));
-        refrescarBoton.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
-        refrescarBoton.setForeground(new java.awt.Color(255, 255, 255));
+        refrescarBoton.setBackground(new java.awt.Color(93, 157, 255));
+        refrescarBoton.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
+        refrescarBoton.setForeground(new java.awt.Color(236, 255, 253));
         refrescarBoton.setText("Refrescar");
         refrescarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,15 +193,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        salirBoton.setBackground(new java.awt.Color(67, 105, 144));
-        salirBoton.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
-        salirBoton.setForeground(new java.awt.Color(255, 255, 255));
+        salirBoton.setBackground(new java.awt.Color(229, 0, 1));
+        salirBoton.setFont(new java.awt.Font("Dubai Medium", 1, 16)); // NOI18N
+        salirBoton.setForeground(new java.awt.Color(236, 255, 253));
         salirBoton.setText("Salir");
         salirBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salirBotonActionPerformed(evt);
             }
         });
+
+        listaDisponibles.setBackground(new java.awt.Color(51, 51, 51));
+        listaDisponibles.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
+        listaDisponibles.setForeground(new java.awt.Color(143, 255, 103));
+        jScrollPane4.setViewportView(listaDisponibles);
+
+        jLabel5.setFont(new java.awt.Font("Dubai Medium", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Completadas");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -207,39 +222,50 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
+                                .addComponent(botonMostrarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cajaTitulo))
-                            .addComponent(jScrollPane2)
-                            .addComponent(seleccionTareaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cajaTextoActualizar))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
+                                .addComponent(botonEliminarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
                                 .addComponent(chekEstadoDeTarea))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(salirBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cajaTextoActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(botonEliminarTarea, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                                        .addComponent(botonMostrarTarea, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                                        .addComponent(botonAgregarTarea, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                                        .addComponent(botonActualizarTarea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                .addComponent(botonAgregarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botonActualizarTarea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cajaTitulo))
+                            .addComponent(jScrollPane1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(agregarTareaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addGap(73, 73, 73)
+                        .addComponent(agregarTareaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(salirBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(seleccionTareaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(refrescarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(refrescarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28))
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -249,12 +275,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(agregarTareaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(seleccionTareaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(refrescarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(salirBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(agregarTareaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -262,28 +291,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(seleccionTareaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(botonAgregarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(124, 124, 124)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(botonMostrarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonEliminarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonActualizarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cajaTextoActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chekEstadoDeTarea))))
-                    .addComponent(jScrollPane3))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonActualizarTarea, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                            .addComponent(botonAgregarTarea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(botonMostrarTarea, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                            .addComponent(cajaTextoActualizar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(botonEliminarTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chekEstadoDeTarea))
+                        .addGap(35, 35, 35)
+                        .addComponent(salirBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16))
+                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane4))
                 .addGap(20, 20, 20))
         );
 
@@ -291,7 +316,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,8 +330,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void botonEliminarTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarTareaActionPerformed
         // TODO add your handling code here:
         String seleccion = listaDeTareasJlist.getSelectedValue();
-        ConsultasDB.eliminarTarea(listaDeTareasJlist, seleccion);
-        ConsultasDB.traerTitulo(listaDeTareasJlist);
+        String seleccionDos = listaDisponibles.getSelectedValue();
+        int opcion = JOptionPane.showConfirmDialog(null, "¿ Desea eliminar la tarea ?", "Seleccione una opcion", JOptionPane.YES_OPTION);
+        
+        if((!listaDeTareasJlist.isSelectionEmpty()) && opcion == JOptionPane.YES_OPTION){
+            ConsultasDB.eliminarTarea(listaDeTareasJlist, seleccion);
+            ConsultasDB.traerTitulo(listaDeTareasJlist,listaDisponibles);
+        
+        }else if((!listaDisponibles.isSelectionEmpty()) && opcion == JOptionPane.YES_OPTION){
+            ConsultasDB.eliminarTarea(listaDisponibles, seleccionDos);
+            ConsultasDB.traerTitulo(listaDeTareasJlist,listaDisponibles);    
+        
+        }else{
+            ConsultasDB.traerTitulo(listaDeTareasJlist,listaDisponibles);
+        }
     }//GEN-LAST:event_botonEliminarTareaActionPerformed
 
     private void botonAgregarTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarTareaActionPerformed
@@ -316,14 +353,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Integer estadoTarea = 0;
         
         DefaultListModel modelo = new DefaultListModel();
-        listaDeTareasJlist.setModel(modelo);
+        listaDisponibles.setModel(modelo);
         
         if(tituloIngresado.length() >= 1 && comentarioIngresado.length() >= 1){
             ConsultasDB.agregarTarea(tituloIngresado, comentarioIngresado, estadoTarea);
-            ConsultasDB.traerTitulo(listaDeTareasJlist);
+            ConsultasDB.traerTitulo(listaDeTareasJlist,listaDisponibles);
             cajaTitulo.setText("");
             cajaComentario.setText("");
         }else{
+            ConsultasDB.traerTitulo(listaDeTareasJlist,listaDisponibles);
             JOptionPane.showMessageDialog(null, "Por favor rellene los 2 campos (Titulo y comentario)");
         }
     }//GEN-LAST:event_botonAgregarTareaActionPerformed
@@ -331,15 +369,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void botonMostrarTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMostrarTareaActionPerformed
         // TODO add your handling code here:
         cajaMostrarTareas.setText("");
-        String seleccion = listaDeTareasJlist.getSelectedValue();
-        String resultado = ConsultasDB.mostrarComentario(seleccion);
-        cajaMostrarTareas.append(resultado);
-        System.out.println(seleccion);
+        String seleccion = listaDeTareasJlist.getSelectedValue();        
+        String selccionDos = listaDisponibles.getSelectedValue();
+        
+        if((!listaDeTareasJlist.isSelectionEmpty()) && seleccion.length() >= 1){
+            cajaMostrarTareas.setText("");
+            String resultado = ConsultasDB.mostrarComentario(seleccion);
+            cajaMostrarTareas.append(resultado);
+            listaDeTareasJlist.clearSelection();
+        }else if((!listaDisponibles.isSelectionEmpty()) && selccionDos.length() >= 1){
+            cajaMostrarTareas.setText("");
+            String resultadoDos = ConsultasDB.mostrarComentario(selccionDos);
+            cajaMostrarTareas.append(resultadoDos);
+            listaDisponibles.clearSelection();
+        }
     }//GEN-LAST:event_botonMostrarTareaActionPerformed
 
     private void botonActualizarTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarTareaActionPerformed
         // TODO add your handling code here:
-        String seleccion = listaDeTareasJlist.getSelectedValue();
+        //String seleccion = listaDeTareasJlist.getSelectedValue();
+        String seleccionDos = listaDisponibles.getSelectedValue();
+        
         String textoNuevo = cajaTextoActualizar.getText();
         Boolean estadoTarea = chekEstadoDeTarea.isSelected();
         Integer estadoPasadoInt = estadoTarea?1:0;
@@ -347,10 +397,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         System.out.println("Estado de la tarea: " + estadoTarea);
         System.out.println("Estado tarea en int: " + estadoPasadoInt);
         if(textoNuevo.length() >= 1){
-            ConsultasDB.actualizar(listaDeTareasJlist, seleccion, textoNuevo, estadoPasadoInt);
+            ConsultasDB.actualizar(listaDisponibles, seleccionDos, textoNuevo, estadoPasadoInt);
             cajaTextoActualizar.setText("");
             chekEstadoDeTarea.setSelected(false);
-            ConsultasDB.traerTitulo(listaDeTareasJlist);
+            ConsultasDB.traerTitulo(listaDeTareasJlist,listaDisponibles);
+        }else{
+            JOptionPane.showMessageDialog(null, "Por favor ingrese un titulo para actualizar");
         }
     }//GEN-LAST:event_botonActualizarTareaActionPerformed
 
@@ -360,7 +412,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void refrescarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refrescarBotonActionPerformed
         // TODO add your handling code here:
-        ConsultasDB.traerTitulo(listaDeTareasJlist);
+        ConsultasDB.traerTitulo(listaDeTareasJlist,listaDisponibles);
+        cajaMostrarTareas.setText("");
     }//GEN-LAST:event_refrescarBotonActionPerformed
 
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
@@ -413,7 +466,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel agregarTareaLabel;
     private javax.swing.JButton botonActualizarTarea;
@@ -429,11 +482,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JList<String> listaDeTareasJlist;
+    private javax.swing.JList<String> listaDisponibles;
     private javax.swing.JButton refrescarBoton;
     private javax.swing.JButton salirBoton;
     private javax.swing.JLabel seleccionTareaLabel;

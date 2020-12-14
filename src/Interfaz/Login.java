@@ -39,6 +39,7 @@ public class Login extends javax.swing.JFrame {
         botonSalir = new javax.swing.JButton();
         cajaNombre = new javax.swing.JTextField();
         cajaContrasenia = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -46,7 +47,7 @@ public class Login extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(42, 42, 46));
 
         iniciarSesionLabel.setFont(new java.awt.Font("Dubai Medium", 1, 24)); // NOI18N
         iniciarSesionLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -72,17 +73,18 @@ public class Login extends javax.swing.JFrame {
         contaseniaLabel.setForeground(new java.awt.Color(255, 255, 255));
         contaseniaLabel.setText("Contraseña");
 
-        botonEntrar.setBackground(new java.awt.Color(51, 51, 51));
+        botonEntrar.setBackground(new java.awt.Color(93, 157, 255));
         botonEntrar.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         botonEntrar.setForeground(new java.awt.Color(255, 255, 255));
         botonEntrar.setText("Entrar");
+        botonEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEntrarActionPerformed(evt);
             }
         });
 
-        botonSalir.setBackground(new java.awt.Color(51, 51, 51));
+        botonSalir.setBackground(new java.awt.Color(93, 157, 255));
         botonSalir.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         botonSalir.setForeground(new java.awt.Color(255, 255, 255));
         botonSalir.setText("Salir");
@@ -92,19 +94,22 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        cajaNombre.setBackground(new java.awt.Color(51, 51, 51));
+        cajaNombre.setBackground(new java.awt.Color(49, 49, 49));
         cajaNombre.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         cajaNombre.setForeground(new java.awt.Color(255, 255, 255));
 
-        cajaContrasenia.setBackground(new java.awt.Color(51, 51, 51));
+        cajaContrasenia.setBackground(new java.awt.Color(49, 49, 49));
         cajaContrasenia.setFont(new java.awt.Font("Dubai Medium", 1, 14)); // NOI18N
         cajaContrasenia.setForeground(new java.awt.Color(255, 255, 255));
-        cajaContrasenia.setText("jPasswordField1");
         cajaContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cajaContraseniaActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Dubai Medium", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Salvador Mellado ©");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -114,8 +119,8 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(95, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(botonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
+                        .addComponent(botonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(cajaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,6 +133,10 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(contaseniaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(268, 268, 268))))
             .addComponent(iniciarSesionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,9 +153,10 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(cajaContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addComponent(botonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(botonEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(jLabel1))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -246,6 +256,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField cajaNombre;
     private javax.swing.JLabel contaseniaLabel;
     private javax.swing.JLabel iniciarSesionLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nombreLabel;
     // End of variables declaration//GEN-END:variables

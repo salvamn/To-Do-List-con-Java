@@ -1,3 +1,5 @@
 INSERT INTO Tareas VALUES("Tarea 0", "Probando", 0);
 
 SELECT * FROM Tareas;
+
+--UPDATE Tareas SET Titulo = "LISTOS", Estado = 1 WHERE Titulo = "LISTO" AND Estado = 0;

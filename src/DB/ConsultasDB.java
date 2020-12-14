@@ -1,6 +1,8 @@
 
 package DB;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,22 +27,28 @@ public class ConsultasDB {
         }
     }
     
-    public static DefaultListModel traerTitulo(JList lista){
+    public static void traerTitulo(JList lista, JList completadas){
         DefaultListModel modelo = new DefaultListModel();
+        DefaultListModel modeloDos = new DefaultListModel();
         ResultSet resultado = null;
-        //String resultadoFinal = null;
         lista.setModel(modelo);
+        completadas.setModel(modeloDos);
         try {
-            PreparedStatement pst = cn.prepareStatement("SELECT Titulo FROM Tareas");
-            resultado = pst.executeQuery();
-            
+            PreparedStatement pst = cn.prepareStatement("SELECT Titulo, Estado FROM Tareas");
+            resultado = pst.executeQuery();            
             while(resultado.next()){
-                //resultadoFinal = resultado.getString("Titulo");
-                modelo.addElement(resultado.getString("Titulo"));
+                if(resultado.getInt("Estado") == 1){ // 1 para tarea lista
+                    modelo.addElement(resultado.getString("Titulo"));
+                    lista.setForeground(Color.GRAY);    
+                }else{
+                    modeloDos.addElement(resultado.getString("Titulo"));
+                    //completadas.setForeground(Color.GREEN);
+                }
             }  
         } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-        return modelo;
+        //return modelo, modeloDos;
     }
     
     public static String mostrarComentario(String titulo){
